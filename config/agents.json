@@ -1,0 +1,441 @@
+{
+  "extracted_at": "2026-08-11",
+  "note": "星标数来自 GitHub 公开检索，接入前请复核仓库维护状态、许可证、供应链与运行安全性。",
+  "groups": [
+    {
+      "id": "autonomous",
+      "name": "全自主 / 半自主渗透 Agent",
+      "focus": "可直接运行的 LLM 渗透测试框架，通常自带编排器、沙箱与工具链",
+      "repos": [
+        {
+          "repo": "usestrix/strix",
+          "url": "https://github.com/usestrix/strix",
+          "stars": 51092,
+          "priority": "high",
+          "description": "Open-source AI penetration testing tool to find and fix your app's vulnerabilities.",
+          "why": "全流程自动化测试入口，适合作为产品级参考；仓库增速高，先审代码再接入。"
+        },
+        {
+          "repo": "vxcontrol/pentagi",
+          "url": "https://github.com/vxcontrol/pentagi",
+          "stars": 21765,
+          "priority": "high",
+          "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks.",
+          "why": "当前最接近生产可用的自主框架之一，包含 UI、agent 编排和工具调度。"
+        },
+        {
+          "repo": "GreyDGL/PentestGPT",
+          "url": "https://github.com/GreyDGL/PentestGPT",
+          "stars": 14796,
+          "priority": "high",
+          "description": "Automated Penetration Testing Agentic Framework Powered by Large Language Models.",
+          "why": "老牌 LLM 渗透框架，任务拆解和提示词设计值得借鉴。"
+        },
+        {
+          "repo": "PurpleAILAB/Decepticon",
+          "url": "https://github.com/PurpleAILAB/Decepticon",
+          "stars": 5038,
+          "priority": "medium",
+          "description": "Autonomous Hacking Agent for Red Team.",
+          "why": "红队自主 agent 参考实现。"
+        },
+        {
+          "repo": "GH05TCREW/pentestagent",
+          "url": "https://github.com/GH05TCREW/pentestagent",
+          "stars": 2913,
+          "priority": "medium",
+          "description": "PentestAgent is an AI agent framework for black-box security testing, supporting bug bounty, red-team, and penetration testing workflows.",
+          "why": "黑盒测试工作流完整，贴合 SRC 场景。"
+        },
+        {
+          "repo": "samugit83/redamon",
+          "url": "https://github.com/samugit83/redamon",
+          "stars": 2298,
+          "priority": "medium",
+          "description": "An AI-powered agentic red team framework that automates offensive security operations, from reconnaissance to exploitation to post-exploitation.",
+          "why": "覆盖完整攻击链，适合研究编排方式。"
+        },
+        {
+          "repo": "Armur-Ai/Pentest-Swarm-AI",
+          "url": "https://github.com/Armur-Ai/Pentest-Swarm-AI",
+          "stars": 2189,
+          "priority": "medium",
+          "description": "Autonomous penetration testing using a swarm of AI agents, orchestrating recon, classification, exploitation, and reporting specialists.",
+          "why": "多智能体分工模式，适合拆分专业 agent。"
+        },
+        {
+          "repo": "oritera/Cairn",
+          "url": "https://github.com/oritera/Cairn",
+          "stars": 2249,
+          "priority": "medium",
+          "description": "A general-purpose state-space search engine, validated first on autonomous penetration testing.",
+          "why": "状态空间搜索思路可用于测试路径规划。"
+        },
+        {
+          "repo": "CyberStrikeus/CyberStrike",
+          "url": "https://github.com/CyberStrikeus/CyberStrike",
+          "stars": 1737,
+          "priority": "medium",
+          "description": "Open-source AI-augmented offensive security harness with 13+ autonomous agents, 56+ built-in tools, and 176+ MCP tools.",
+          "why": "工具和技能数量大，适合做工具矩阵参考。"
+        },
+        {
+          "repo": "zakirkun/guardian-cli",
+          "url": "https://github.com/zakirkun/guardian-cli",
+          "stars": 1762,
+          "priority": "medium",
+          "description": "Production-ready AI-powered penetration testing automation CLI using Gemini and LangChain.",
+          "why": "CLI 化自动化工作流参考。"
+        },
+        {
+          "repo": "PentesterFlow/agent",
+          "url": "https://github.com/PentesterFlow/agent",
+          "stars": 1259,
+          "priority": "medium",
+          "description": "Agentic offensive-security in your terminal.",
+          "why": "终端交互式 agent 设计参考。"
+        },
+        {
+          "repo": "JoasASantos/NeuroSploit",
+          "url": "https://github.com/JoasASantos/NeuroSploit",
+          "stars": 1296,
+          "priority": "medium",
+          "description": "Advanced AI-powered penetration testing framework designed to automate offensive security operations.",
+          "why": "自动化攻击阶段编排参考。"
+        },
+        {
+          "repo": "SanMuzZzZz/LuaN1aoAgent",
+          "url": "https://github.com/SanMuzZzZz/LuaN1aoAgent",
+          "stars": 1259,
+          "priority": "medium",
+          "description": "Fully autonomous AI penetration testing agent driven by graph-based cognitive reasoning.",
+          "why": "图式推理与任务规划思路可借鉴。"
+        },
+        {
+          "repo": "berylliumsec/nebula",
+          "url": "https://github.com/berylliumsec/nebula",
+          "stars": 1085,
+          "priority": "medium",
+          "description": "AI-powered penetration testing assistant for automating recon, note-taking, and vulnerability analysis.",
+          "why": "侦察和笔记自动化轻量参考。"
+        },
+        {
+          "repo": "yashab-cyber/HackGpt",
+          "url": "https://github.com/yashab-cyber/HackGpt",
+          "stars": 927,
+          "priority": "reference",
+          "description": "Cloud-native AI-powered penetration testing platform for enterprise security teams.",
+          "why": "平台化架构参考。"
+        },
+        {
+          "repo": "pikpikcu/airecon",
+          "url": "https://github.com/pikpikcu/airecon",
+          "stars": 940,
+          "priority": "medium",
+          "description": "Autonomous cybersecurity agent combining Ollama, a Kali Linux Docker sandbox, and a Textual TUI.",
+          "why": "本地模型加 Kali 沙箱的组合适合离线环境。"
+        },
+        {
+          "repo": "xalgorix/xalgorix",
+          "url": "https://github.com/xalgorix/xalgorix",
+          "stars": 851,
+          "priority": "reference",
+          "description": "Autonomous AI pentesting agents for real-time reconnaissance, vulnerability detection, and exploitation orchestration.",
+          "why": "实时侦察与利用编排参考。"
+        },
+        {
+          "repo": "ASCIT31/Dark-Moon",
+          "url": "https://github.com/ASCIT31/Dark-Moon",
+          "stars": 829,
+          "priority": "reference",
+          "description": "Autonomous AI pentesting engine covering web, cloud, identity, CI/CD, IaC, databases, Active Directory, Kubernetes and IoT firmware.",
+          "why": "多域覆盖的自主渗透引擎参考。"
+        },
+        {
+          "repo": "sooryathejas/METATRON",
+          "url": "https://github.com/sooryathejas/METATRON",
+          "stars": 3426,
+          "priority": "reference",
+          "description": "AI-powered penetration testing assistant using local LLM on Linux (Parrot OS).",
+          "why": "本地 LLM 渗透助手。"
+        },
+        {
+          "repo": "ARCANGEL0/EVA",
+          "url": "https://github.com/ARCANGEL0/EVA",
+          "stars": 470,
+          "priority": "reference",
+          "description": "AI-assisted penetration testing agent providing structured attack guidance and multi-backend AI integration.",
+          "why": "轻量攻击引导 agent。"
+        },
+        {
+          "repo": "s0ld13rr/pentestcode",
+          "url": "https://github.com/s0ld13rr/pentestcode",
+          "stars": 293,
+          "priority": "reference",
+          "description": "Multi-agent AI penetration testing system with persistent engagement state and parallel autonomous operations.",
+          "why": "持久化测试状态和并行执行参考。"
+        },
+        {
+          "repo": "pensarai/apex",
+          "url": "https://github.com/pensarai/apex",
+          "stars": 301,
+          "priority": "reference",
+          "description": "AI-powered offensive security testing using autonomous agents, directly in your terminal.",
+          "why": "终端内自主安全测试参考。"
+        }
+      ]
+    },
+    {
+      "id": "codex-claude-skills",
+      "name": "Claude Code / Codex 技能与子代理包",
+      "focus": "与你现有 CkSKILLS 最接近，可直接复制进 agent 工作区作为方法论和技能库",
+      "repos": [
+        {
+          "repo": "zhaji2333/CkSKILLS",
+          "url": "https://github.com/zhaji2333/CkSKILLS",
+          "stars": 21,
+          "priority": "high",
+          "description": "基于 Claude Code / Codex 的 SRC 漏洞挖掘 Agent 技能体系，系统级提示词加专项安全测试 Skill 知识库。",
+          "why": "当前工作区已克隆并复制到 _PT工作台，作为本体。"
+        },
+        {
+          "repo": "mukul975/Anthropic-Cybersecurity-Skills",
+          "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+          "stars": 27605,
+          "priority": "high",
+          "description": "817 structured cybersecurity skills for AI agents, mapped to MITRE ATT&CK, NIST CSF, MITRE ATLAS and more.",
+          "why": "技能覆盖面大，可按框架裁剪出适合自身 agent 的子集。"
+        },
+        {
+          "repo": "zhaoxuya520/reverse-skill",
+          "url": "https://github.com/zhaoxuya520/reverse-skill",
+          "stars": 23840,
+          "priority": "high",
+          "description": "逆向/渗透/安全技能路由包，AI 自动路由、按需自举工具链，支持 Claude Code、Kiro、Cursor、Cline 等。",
+          "why": "中文场景技能路由设计，与 CkSKILLS 风格接近，值得对照。"
+        },
+        {
+          "repo": "gadievron/raptor",
+          "url": "https://github.com/gadievron/raptor",
+          "stars": 3597,
+          "priority": "high",
+          "description": "Turns Claude Code into a general-purpose AI offensive/defensive security agent using rules, sub-agents, and skills.",
+          "why": "Claude Code 安全 agent 配置范式，含子代理与工具编排。"
+        },
+        {
+          "repo": "0xSteph/pentest-ai-agents",
+          "url": "https://github.com/0xSteph/pentest-ai-agents",
+          "stars": 2109,
+          "priority": "high",
+          "description": "Specialized AI subagents for planning engagements, analyzing recon, researching exploits, and writing reports.",
+          "why": "子代理划分清晰，可直接对照你的工作流。"
+        },
+        {
+          "repo": "wgpsec/AboutSecurity",
+          "url": "https://github.com/wgpsec/AboutSecurity",
+          "stars": 1648,
+          "priority": "medium",
+          "description": "Everything for pentest, 渗透测试知识库，以 AI Agent 可执行的格式沉淀安全方法论。",
+          "why": "中文渗透知识库，适合转成 skill。"
+        },
+        {
+          "repo": "transilienceai/communitytools",
+          "url": "https://github.com/transilienceai/communitytools",
+          "stars": 466,
+          "priority": "medium",
+          "description": "Open-source Claude Code skills, agents, and slash commands for AI-powered penetration testing and security research.",
+          "why": "社区版 Claude Code 技能集合。"
+        },
+        {
+          "repo": "hypnguyen1209/offensive-claude",
+          "url": "https://github.com/hypnguyen1209/offensive-claude",
+          "stars": 338,
+          "priority": "medium",
+          "description": "Offensive security toolkit for Claude Code covering red team, exploit dev, AD attacks, EDR bypass, mobile pentest.",
+          "why": "覆盖红队、AD、EDR 绕过与移动端。"
+        },
+        {
+          "repo": "Fausto-404/ai-mobile-reverse-skills",
+          "url": "https://github.com/Fausto-404/ai-mobile-reverse-skills",
+          "stars": 137,
+          "priority": "reference",
+          "description": "面向移动安全分析场景的 6 阶段总控 Skill，支持 JADX MCP、Burp/Yakit MCP、IDA/Ghidra MCP。",
+          "why": "移动端专项技能与 MCP 联动参考。"
+        }
+      ]
+    },
+    {
+      "id": "mcp-tools",
+      "name": "MCP 工具服务器 / 工具封装层",
+      "focus": "把 150+ 真实安全工具封装成 MCP，让 Codex/Claude 直接调用",
+      "repos": [
+        {
+          "repo": "0x4m4/hexstrike-ai",
+          "url": "https://github.com/0x4m4/hexstrike-ai",
+          "stars": 10942,
+          "priority": "high",
+          "description": "Advanced MCP server letting AI agents autonomously run 150+ cybersecurity tools for automated pentesting and bug bounty automation.",
+          "why": "工具数量最全的 MCP 封装，优先研究其工具清单和沙箱方式。"
+        },
+        {
+          "repo": "0xSteph/pentest-ai",
+          "url": "https://github.com/0xSteph/pentest-ai",
+          "stars": 1576,
+          "priority": "high",
+          "description": "Offensive-security MCP server with 205 wrapped tools, 17 specialist agents, and 60 SPA-aware probes for OWASP Top 10.",
+          "why": "工具封装粒度细，含 SPA 探测。"
+        },
+        {
+          "repo": "OpenOSINT/OpenOSINT",
+          "url": "https://github.com/OpenOSINT/OpenOSINT",
+          "stars": 1385,
+          "priority": "medium",
+          "description": "AI-powered OSINT agent with interactive REPL, MCP server, and CLI; 19 tools.",
+          "why": "OSINT 阶段 MCP 化参考。"
+        },
+        {
+          "repo": "mbrg/power-pwn",
+          "url": "https://github.com/mbrg/power-pwn",
+          "stars": 1178,
+          "priority": "medium",
+          "description": "Offensive/defense security toolset for discovery, recon and ethical assessment of AI Agents.",
+          "why": "面向 AI Agent 本身的攻防评估工具集。"
+        }
+      ]
+    },
+    {
+      "id": "research-eval",
+      "name": "AI 红队 / 评估 / 参考项目",
+      "focus": "用于评估 agent 本身的安全边界，以及做 LLM 应用渗透测试",
+      "repos": [
+        {
+          "repo": "promptfoo/promptfoo",
+          "url": "https://github.com/promptfoo/promptfoo",
+          "stars": 24132,
+          "priority": "medium",
+          "description": "Test prompts, agents, and RAGs; red teaming and vulnerability scanning for AI.",
+          "why": "LLM 应用渗透测试和 agent 评估。"
+        },
+        {
+          "repo": "fr0gger/Awesome-GPT-Agents",
+          "url": "https://github.com/fr0gger/Awesome-GPT-Agents",
+          "stars": 6579,
+          "priority": "medium",
+          "description": "A curated list of GPT agents for cybersecurity.",
+          "why": "持续更新的安全 agent 目录。"
+        },
+        {
+          "repo": "elder-plinius/T3MP3ST",
+          "url": "https://github.com/elder-plinius/T3MP3ST",
+          "stars": 5529,
+          "priority": "reference",
+          "description": "Autonomous red teaming platform; multi-agent offensive-security meta-harness.",
+          "why": "多 agent 红队 meta-harness，偏研究和对抗 AI。"
+        },
+        {
+          "repo": "scadastrangelove/awesome-ai-security-tools",
+          "url": "https://github.com/scadastrangelove/awesome-ai-security-tools",
+          "stars": 1035,
+          "priority": "medium",
+          "description": "Curated list of AI security and AI-assisted cybersecurity tools, including pentest agents and LLM red-teaming.",
+          "why": "AI 安全工具全景目录。"
+        },
+        {
+          "repo": "Yeti-791/Tsec-Hackathon",
+          "url": "https://github.com/Yeti-791/Tsec-Hackathon",
+          "stars": 754,
+          "priority": "medium",
+          "description": "腾讯云智能渗透黑客松官方仓库，展示 LLM 自主渗透 agent 的获奖项目。",
+          "why": "国内自主渗透 agent 实战项目集合。"
+        },
+        {
+          "repo": "Dryxio/auto-re-agent",
+          "url": "https://github.com/Dryxio/auto-re-agent",
+          "stars": 1312,
+          "priority": "reference",
+          "description": "Open-source AI reverse-engineering agent using Ghidra and LLMs to reconstruct and validate functions.",
+          "why": "逆向方向 agent 参考。"
+        },
+        {
+          "repo": "416rehman/DeepZero",
+          "url": "https://github.com/416rehman/DeepZero",
+          "stars": 685,
+          "priority": "reference",
+          "description": "Automated vulnerability research framework analyzing Windows kernel drivers for exploitable IOCTLs using AI agents.",
+          "why": "驱动漏洞研究方向参考。"
+        }
+      ]
+    },
+    {
+      "id": "awesome-lists",
+      "name": "工具与方法论聚合清单",
+      "focus": "用于持续补充工具注册表，不直接作为运行时",
+      "repos": [
+        {
+          "repo": "enaqx/awesome-pentest",
+          "url": "https://github.com/enaqx/awesome-pentest",
+          "stars": 26854,
+          "priority": "high",
+          "description": "A collection of awesome penetration testing resources, tools and other shiny things.",
+          "why": "最经典的渗透资源目录。"
+        },
+        {
+          "repo": "vitalysim/Awesome-Hacking-Resources",
+          "url": "https://github.com/vitalysim/Awesome-Hacking-Resources",
+          "stars": 17312,
+          "priority": "high",
+          "description": "A collection of hacking / penetration testing resources to make you better.",
+          "why": "覆盖工具、教程、书籍与实验室。"
+        },
+        {
+          "repo": "edoardottt/awesome-hacker-search-engines",
+          "url": "https://github.com/edoardottt/awesome-hacker-search-engines",
+          "stars": 11022,
+          "priority": "high",
+          "description": "Curated list of awesome search engines useful during penetration testing, red/blue team operations and bug bounty.",
+          "why": "信息收集阶段搜索源清单。"
+        },
+        {
+          "repo": "infosecn1nja/Red-Teaming-Toolkit",
+          "url": "https://github.com/infosecn1nja/Red-Teaming-Toolkit",
+          "stars": 10615,
+          "priority": "high",
+          "description": "Cutting-edge open-source security tools for a red teamer and threat hunter.",
+          "why": "红队全阶段工具目录。"
+        },
+        {
+          "repo": "vavkamil/awesome-bugbounty-tools",
+          "url": "https://github.com/vavkamil/awesome-bugbounty-tools",
+          "stars": 6177,
+          "priority": "high",
+          "description": "A curated list of various bug bounty tools.",
+          "why": "SRC/众测场景工具清单。"
+        },
+        {
+          "repo": "OlivierLaflamme/Cheatsheet-God",
+          "url": "https://github.com/OlivierLaflamme/Cheatsheet-God",
+          "stars": 5606,
+          "priority": "medium",
+          "description": "Penetration Testing Reference Bank - OSCP / PTP & PTX Cheatsheet.",
+          "why": "命令速查参考。"
+        },
+        {
+          "repo": "kaiiyer/awesome-vulnerable",
+          "url": "https://github.com/kaiiyer/awesome-vulnerable",
+          "stars": 1374,
+          "priority": "medium",
+          "description": "A curated list of vulnerable apps and systems for penetration testing practice labs.",
+          "why": "本地靶场选型，用于验证 agent 自动化流程。"
+        },
+        {
+          "repo": "taielab/awesome-hacking-lists",
+          "url": "https://github.com/taielab/awesome-hacking-lists",
+          "stars": 1376,
+          "priority": "medium",
+          "description": "A curated collection of top-tier penetration testing tools and productivity utilities across multiple domains.",
+          "why": "多域工具聚合，便于补齐注册表。"
+        }
+      ]
+    }
+  ]
+}

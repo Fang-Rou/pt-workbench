@@ -1,0 +1,4 @@
+interface:
+  display_name: "中间件框架Nday"
+  short_description: "中间件、框架与OA的Nday匹配、验证、利用与打点"
+  default_prompt: "Use $middleware-framework-nday to match fingerprints to known CVEs and validate."

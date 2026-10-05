@@ -1,0 +1,32 @@
+{
+  "updated": "2026-09-02",
+  "probe_set_v1": [
+    "/", "/prod-api/captchaImage", "/dev-api/captchaImage",
+    "/captcha/captchaImage", "/druid/index.html",
+    "/swagger-ui/index.html", "/v2/api-docs", "/v3/api-docs"
+  ],
+  "strong": [
+    "body: ruoyi|若依",
+    "json: uuid+img+captchaEnabled (RuoYi-Vue captcha)",
+    "title: 若依 / ruoyi",
+    "api-docs info.title 含 ruoyi",
+    "ry-ui.js?v=X.Y.Z / /ruoyi/ 静态前缀 (单体版)"
+  ],
+  "weak": ["druid-stat", "springfox", "springdoc", "shiro", "vue-element-admin"],
+  "false_positive_patterns": [
+    "CDN/SPA catch-all: 任意路径 200 且 body 长度几乎一致 (ford.com.cn 39.9KB, meet.aimatech.com 58.1KB)",
+    "Django redirect_to 登录网关: 全部路径 302 -> /login/?redirect_to= (cmsportal.siemens-healthineers.cn)",
+    "404 页正文含组件名 (www.nlcpress.com)"
+  ],
+  "rules": [
+    "等长 200 兜底页出现时必须做内容差分再判级",
+    "正文词库命中前先确认响应非模板/兜底页",
+    "登录页资源版本串 (ry-ui.js?v=) 优先于正文词命中",
+    "命中后确认: 注册页面存在 != 注册开放, 先 POST /register 探测服务端开关"
+  ],
+  "evidence_sources": [
+    "results/ruoyi-pool-fp-2026-09-02/fingerprints.json (240 hosts, rank1=1)",
+    "results/ruoyi-subs-fp-2026-09-02/fingerprints.json (813 hosts, rank1=0)",
+    "results/ruoyi-csifs-64916-2026-09-02/ (定向验证记录)"
+  ]
+}

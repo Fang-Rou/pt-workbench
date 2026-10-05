@@ -1,0 +1,4 @@
+interface:
+  display_name: "SRC打点与报告"
+  short_description: "SRC范围、红线、测试流程、漏洞定级、证据与报告规范"
+  default_prompt: "Use $pt-engagement to plan authorized SRC testing, evidence, and reporting."

@@ -1,0 +1,46 @@
+{
+  "updated": "2026-09-02",
+  "note": "种子目录。每条必须含来源/受影响版本/修复证据/平台收录状态；提交前一律过 scripts/submission_dedupe_check.py；本表仅作审计种子，不直接当新洞提交",
+  "entries": [
+    {
+      "id": "CVE-2024-57438",
+      "family": "RuoYi",
+      "product": "RuoYi 4.8.0 (单体)",
+      "type": "improper authorization / role assignment 提权",
+      "preauth": false,
+      "source": "GHSA-h5jh-rp76-q242",
+      "platform_status": "unknown",
+      "verified": false
+    },
+    {
+      "id": "CVE-2025-10384",
+      "family": "RuoYi",
+      "product": "RuoYi <= 4.8.1 (单体)",
+      "type": "Role cancelAll improper authorization",
+      "preauth": false,
+      "source": "https://app.opencve.io/cve/CVE-2025-10384",
+      "platform_status": "unknown",
+      "verified": false
+    },
+    {
+      "id": "CVE-2025-28401",
+      "family": "RuoYi",
+      "product": "RuoYi 4.8.0/4.8.1?",
+      "type": "privilege escalation (需回源核验: 原始公告/受影响代码/修复 commit)",
+      "preauth": false,
+      "source": "https://fixthecve.com/cve/CVE-2025-28401",
+      "platform_status": "unknown",
+      "verified": false
+    },
+    {
+      "id": "CVE-2025-10473",
+      "family": "RuoYi",
+      "product": "RuoYi (版本待核验)",
+      "type": "待核验",
+      "preauth": false,
+      "source": "https://vuldb.com/zh/cve/CVE-2025-10473",
+      "platform_status": "unknown",
+      "verified": false
+    }
+  ]
+}

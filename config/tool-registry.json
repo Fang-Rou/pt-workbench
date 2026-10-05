@@ -1,0 +1,776 @@
+{
+  "extracted_at": "2026-08-11",
+  "usage": "按 phase 字段选择工具；工具仅用于已获授权的测试目标。",
+  "phases": {
+    "recon": "资产测绘与信息收集",
+    "scan": "漏洞扫描与验证",
+    "exploit": "利用与验证",
+    "post": "后渗透与横向移动",
+    "mobile": "移动端与逆向",
+    "cloud": "云安全",
+    "audit": "源码与灰盒审计",
+    "support": "字典、OOB、辅助设施"
+  },
+  "tools": [
+    {
+      "name": "subfinder",
+      "repo": "projectdiscovery/subfinder",
+      "url": "https://github.com/projectdiscovery/subfinder",
+      "stars": 14172,
+      "phase": "recon",
+      "category": "子域枚举",
+      "description": "Fast passive subdomain enumeration tool.",
+      "agent_hint": "被动子域收集，输出交给 httpx 做存活和指纹。"
+    },
+    {
+      "name": "amass",
+      "repo": "owasp-amass/amass",
+      "url": "https://github.com/owasp-amass/amass",
+      "stars": 14967,
+      "phase": "recon",
+      "category": "攻击面测绘",
+      "description": "In-depth attack surface mapping and asset discovery.",
+      "agent_hint": "主动加被动资产测绘，结果并入资产清单。"
+    },
+    {
+      "name": "OneForAll",
+      "repo": "shmilylty/OneForAll",
+      "url": "https://github.com/shmilylty/OneForAll",
+      "stars": 9980,
+      "phase": "recon",
+      "category": "子域收集",
+      "description": "功能强大的子域收集工具。",
+      "agent_hint": "国内目标常用，依赖较多，建议容器运行。"
+    },
+    {
+      "name": "assetfinder",
+      "repo": "tomnomnom/assetfinder",
+      "url": "https://github.com/tomnomnom/assetfinder",
+      "stars": 3661,
+      "phase": "recon",
+      "category": "子域收集",
+      "description": "Find domains and subdomains related to a given domain.",
+      "agent_hint": "轻量子域收集，可与其他枚举结果合并去重。"
+    },
+    {
+      "name": "nmap",
+      "repo": "nmap/nmap",
+      "url": "https://github.com/nmap/nmap",
+      "stars": 13337,
+      "phase": "recon",
+      "category": "端口与服务识别",
+      "description": "Nmap - the Network Mapper.",
+      "agent_hint": "先 -sT -sV 做常规识别，再按服务类型选后续工具。"
+    },
+    {
+      "name": "naabu",
+      "repo": "projectdiscovery/naabu",
+      "url": "https://github.com/projectdiscovery/naabu",
+      "stars": 6171,
+      "phase": "recon",
+      "category": "端口扫描",
+      "description": "Fast port scanner designed for attack surface discovery.",
+      "agent_hint": "配合 httpx/nuclei 做批量端口到 Web 资产转换。"
+    },
+    {
+      "name": "httpx",
+      "repo": "projectdiscovery/httpx",
+      "url": "https://github.com/projectdiscovery/httpx",
+      "stars": 10265,
+      "phase": "recon",
+      "category": "HTTP 存活与指纹",
+      "description": "Fast and multi-purpose HTTP toolkit.",
+      "agent_hint": "子域/端口结果统一过 httpx，得到状态码、标题、技术栈。"
+    },
+    {
+      "name": "katana",
+      "repo": "projectdiscovery/katana",
+      "url": "https://github.com/projectdiscovery/katana",
+      "stars": 17304,
+      "phase": "recon",
+      "category": "爬虫与链接收集",
+      "description": "A next-generation crawling and spidering framework.",
+      "agent_hint": "爬取 JS 入口、API 路径和隐藏路由。"
+    },
+    {
+      "name": "gau",
+      "repo": "lc/gau",
+      "url": "https://github.com/lc/gau",
+      "stars": 5060,
+      "phase": "recon",
+      "category": "历史 URL 收集",
+      "description": "Fetch known URLs from AlienVault OTX, Wayback Machine, and Common Crawl.",
+      "agent_hint": "历史 URL 中常有旧接口和测试路径。"
+    },
+    {
+      "name": "waybackurls",
+      "repo": "tomnomnom/waybackurls",
+      "url": "https://github.com/tomnomnom/waybackurls",
+      "stars": 4534,
+      "phase": "recon",
+      "category": "历史 URL 收集",
+      "description": "Fetch all URLs the Wayback Machine knows about for a domain.",
+      "agent_hint": "与 gau 结果合并去重后喂给 ffuf/katana/nuclei。"
+    },
+    {
+      "name": "WhatWeb",
+      "repo": "urbanadventurer/WhatWeb",
+      "url": "https://github.com/urbanadventurer/WhatWeb",
+      "stars": 6776,
+      "phase": "recon",
+      "category": "Web 指纹识别",
+      "description": "Next generation web scanner.",
+      "agent_hint": "识别 CMS/框架/中间件，决定后续漏洞模板。"
+    },
+    {
+      "name": "wafw00f",
+      "repo": "EnableSecurity/wafw00f",
+      "url": "https://github.com/EnableSecurity/wafw00f",
+      "stars": 6513,
+      "phase": "recon",
+      "category": "WAF 识别",
+      "description": "Identify and fingerprint Web Application Firewall products.",
+      "agent_hint": "识别 WAF 后联动 waf-bypass-techniques。"
+    },
+    {
+      "name": "Arjun",
+      "repo": "s0md3v/Arjun",
+      "url": "https://github.com/s0md3v/Arjun",
+      "stars": 6376,
+      "phase": "recon",
+      "category": "参数发现",
+      "description": "HTTP parameter discovery suite.",
+      "agent_hint": "批量猜隐藏参数，结果用于注入和越权测试。"
+    },
+    {
+      "name": "ffuf",
+      "repo": "ffuf/ffuf",
+      "url": "https://github.com/ffuf/ffuf",
+      "stars": 16515,
+      "phase": "recon",
+      "category": "目录与内容模糊测试",
+      "description": "Fast web fuzzer written in Go.",
+      "agent_hint": "目录、参数、虚拟主机、403 绕过均可做 fuzz。"
+    },
+    {
+      "name": "dirsearch",
+      "repo": "maurosoria/dirsearch",
+      "url": "https://github.com/maurosoria/dirsearch",
+      "stars": 14589,
+      "phase": "recon",
+      "category": "目录扫描",
+      "description": "Web path scanner.",
+      "agent_hint": "配合字典扫描管理后台、备份、调试端点。"
+    },
+    {
+      "name": "LinkFinder",
+      "repo": "GerbenJavado/LinkFinder",
+      "url": "https://github.com/GerbenJavado/LinkFinder",
+      "stars": 4434,
+      "phase": "recon",
+      "category": "JS 端点提取",
+      "description": "Discover endpoints in JavaScript files.",
+      "agent_hint": "从 JS 中提取 API 路径和敏感端点。"
+    },
+    {
+      "name": "SecretFinder",
+      "repo": "m4ll0k/SecretFinder",
+      "url": "https://github.com/m4ll0k/SecretFinder",
+      "stars": 2499,
+      "phase": "recon",
+      "category": "JS 敏感信息提取",
+      "description": "Find sensitive data like apikeys, accesstoken, authorizations in JS files.",
+      "agent_hint": "扫描 JS 中的密钥、AK/SK、内部域名。"
+    },
+    {
+      "name": "Packer-InfoFinder",
+      "repo": "TFour123/Packer-InfoFinder",
+      "url": "https://github.com/TFour123/Packer-InfoFinder",
+      "stars": 224,
+      "phase": "recon",
+      "category": "webpack 资产提取",
+      "description": "自动抓取 JS、还原 webpack 异步模块、提取接口与敏感信息。",
+      "agent_hint": "对应 CkSKILLS recon-js-analysis 的 webpack/source map 还原。"
+    },
+    {
+      "name": "interactsh",
+      "repo": "projectdiscovery/interactsh",
+      "url": "https://github.com/projectdiscovery/interactsh",
+      "stars": 4478,
+      "phase": "support",
+      "category": "OOB 交互平台",
+      "description": "An OOB interaction gathering server and client library.",
+      "agent_hint": "SSRF、XXE、RCE 盲注验证的回连接收端。"
+    },
+    {
+      "name": "SecLists",
+      "repo": "danielmiessler/SecLists",
+      "url": "https://github.com/danielmiessler/SecLists",
+      "stars": 72778,
+      "phase": "support",
+      "category": "字典库",
+      "description": "Collection of usernames, passwords, URLs, fuzzing payloads, web shells and more.",
+      "agent_hint": "目录、弱口令、fuzz 的通用字典来源。"
+    },
+    {
+      "name": "nuclei",
+      "repo": "projectdiscovery/nuclei",
+      "url": "https://github.com/projectdiscovery/nuclei",
+      "stars": 30438,
+      "phase": "scan",
+      "category": "漏洞模板扫描",
+      "description": "Fast, customizable vulnerability scanner powered by YAML templates.",
+      "agent_hint": "批量漏洞验证主引擎，联动 nuclei-templates。"
+    },
+    {
+      "name": "nuclei-templates",
+      "repo": "projectdiscovery/nuclei-templates",
+      "url": "https://github.com/projectdiscovery/nuclei-templates",
+      "stars": 12784,
+      "phase": "scan",
+      "category": "漏洞模板库",
+      "description": "Community curated list of templates for the nuclei engine.",
+      "agent_hint": "保持更新，扫描前用 -update-templates。"
+    },
+    {
+      "name": "xray",
+      "repo": "chaitin/xray",
+      "url": "https://github.com/chaitin/xray",
+      "stars": 11698,
+      "phase": "scan",
+      "category": "Web 漏洞扫描",
+      "description": "完善的安全评估工具，支持常见 Web 安全问题扫描和自定义 POC。",
+      "agent_hint": "国内 Web 漏洞扫描常用，支持 POC 扩展。"
+    },
+    {
+      "name": "yakit",
+      "repo": "yaklang/yakit",
+      "url": "https://github.com/yaklang/yakit",
+      "stars": 7676,
+      "phase": "scan",
+      "category": "综合安全平台",
+      "description": "Cyber Security ALL-IN-ONE Platform.",
+      "agent_hint": "抓包、扫描、POC 与 MITM 一体化，适合作为交互式工作台。"
+    },
+    {
+      "name": "zaproxy",
+      "repo": "zaproxy/zaproxy",
+      "url": "https://github.com/zaproxy/zaproxy",
+      "stars": 15572,
+      "phase": "scan",
+      "category": "Web 应用扫描器",
+      "description": "The ZAP by Checkmarx Core project.",
+      "agent_hint": "OWASP 标准 Web 扫描器，可脚本化 API 驱动。"
+    },
+    {
+      "name": "wpscan",
+      "repo": "wpscanteam/wpscan",
+      "url": "https://github.com/wpscanteam/wpscan",
+      "stars": 9727,
+      "phase": "scan",
+      "category": "WordPress 扫描",
+      "description": "WordPress security scanner.",
+      "agent_hint": "识别插件/主题版本后查已知漏洞。"
+    },
+    {
+      "name": "fscan",
+      "repo": "shadow1ng/fscan",
+      "url": "https://github.com/shadow1ng/fscan",
+      "stars": 14237,
+      "phase": "scan",
+      "category": "内网综合扫描",
+      "description": "一款内网综合扫描工具，支持一键自动化、全方位漏洞扫描。",
+      "agent_hint": "内网资产发现、端口、弱口令、常见漏洞一把梭。"
+    },
+    {
+      "name": "sqlmap",
+      "repo": "sqlmapproject/sqlmap",
+      "url": "https://github.com/sqlmapproject/sqlmap",
+      "stars": 38158,
+      "phase": "exploit",
+      "category": "SQL 注入利用",
+      "description": "Automatic SQL injection and database takeover tool.",
+      "agent_hint": "注入点确认后自动化拖库/命令执行，注意授权与流量控制。"
+    },
+    {
+      "name": "metasploit-framework",
+      "repo": "rapid7/metasploit-framework",
+      "url": "https://github.com/rapid7/metasploit-framework",
+      "stars": 38787,
+      "phase": "exploit",
+      "category": "利用框架",
+      "description": "Metasploit Framework.",
+      "agent_hint": "漏洞验证、payload 生成、会话管理的主框架。"
+    },
+    {
+      "name": "hydra",
+      "repo": "vanhauser-thc/thc-hydra",
+      "url": "https://github.com/vanhauser-thc/thc-hydra",
+      "stars": 12146,
+      "phase": "exploit",
+      "category": "在线口令爆破",
+      "description": "Network logon cracker supporting many protocols.",
+      "agent_hint": "SSH/RDP/HTTP 表单等在线口令测试。"
+    },
+    {
+      "name": "hashcat",
+      "repo": "hashcat/hashcat",
+      "url": "https://github.com/hashcat/hashcat",
+      "stars": 26517,
+      "phase": "exploit",
+      "category": "离线口令破解",
+      "description": "World's fastest and most advanced password recovery utility.",
+      "agent_hint": "拿到哈希后离线破解，配合规则和字典。"
+    },
+    {
+      "name": "PayloadsAllTheThings",
+      "repo": "swisskyrepo/PayloadsAllTheThings",
+      "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+      "stars": 79937,
+      "phase": "exploit",
+      "category": "Payload 知识库",
+      "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF.",
+      "agent_hint": "注入、绕过、反序列化等 payload 速查。"
+    },
+    {
+      "name": "impacket",
+      "repo": "fortra/impacket",
+      "url": "https://github.com/fortra/impacket",
+      "stars": 15989,
+      "phase": "post",
+      "category": "协议与 AD 攻击",
+      "description": "Collection of Python classes for working with network protocols.",
+      "agent_hint": "SMB/WinRM/LDAP 与 AD 域渗透常用脚本集合。"
+    },
+    {
+      "name": "BloodHound-Legacy",
+      "repo": "SpecterOps/BloodHound-Legacy",
+      "url": "https://github.com/SpecterOps/BloodHound-Legacy",
+      "stars": 10603,
+      "phase": "post",
+      "category": "AD 攻击路径分析",
+      "description": "Six Degrees of Domain Admin.",
+      "agent_hint": "AD 权限路径可视化；新版本见 https://github.com/SpecterOps/BloodHound。"
+    },
+    {
+      "name": "mimikatz",
+      "repo": "gentilkiwi/mimikatz",
+      "url": "https://github.com/gentilkiwi/mimikatz",
+      "stars": 21766,
+      "phase": "post",
+      "category": "Windows 凭据提取",
+      "description": "A little tool to play with Windows security.",
+      "agent_hint": "Windows 凭据/票据提取，仅限授权环境使用。"
+    },
+    {
+      "name": "jadx",
+      "repo": "skylot/jadx",
+      "url": "https://github.com/skylot/jadx",
+      "stars": 50022,
+      "phase": "mobile",
+      "category": "APK 反编译",
+      "description": "Dex to Java decompiler.",
+      "agent_hint": "APK/DEX 反编译，提取接口、密钥和签名逻辑。"
+    },
+    {
+      "name": "frida",
+      "repo": "frida/frida",
+      "url": "https://github.com/frida/frida",
+      "stars": 21596,
+      "phase": "mobile",
+      "category": "动态插桩",
+      "description": "Inject JavaScript to explore apps on Windows, macOS, Linux, iOS and Android.",
+      "agent_hint": "Hook 加密函数、绕过证书校验、动态调试。"
+    },
+    {
+      "name": "objection",
+      "repo": "sensepost/objection",
+      "url": "https://github.com/sensepost/objection",
+      "stars": 9312,
+      "phase": "mobile",
+      "category": "移动运行时探索",
+      "description": "Runtime mobile exploration.",
+      "agent_hint": "基于 Frida 的免 root 运行时探索和防护绕过。"
+    },
+    {
+      "name": "prowler",
+      "repo": "prowler-cloud/prowler",
+      "url": "https://github.com/prowler-cloud/prowler",
+      "stars": 14563,
+      "phase": "cloud",
+      "category": "多云安全审计",
+      "description": "Automates security and compliance across any cloud environment.",
+      "agent_hint": "AWS/Azure/GCP 配置与合规基线检查。"
+    },
+    {
+      "name": "pacu",
+      "repo": "RhinoSecurityLabs/pacu",
+      "url": "https://github.com/RhinoSecurityLabs/pacu",
+      "stars": 5302,
+      "phase": "cloud",
+      "category": "AWS 利用框架",
+      "description": "The AWS exploitation framework.",
+      "agent_hint": "AWS 凭证泄露后的枚举、提权和利用链。"
+    },
+    {
+      "name": "ScoutSuite",
+      "repo": "nccgroup/ScoutSuite",
+      "url": "https://github.com/nccgroup/ScoutSuite",
+      "stars": 7786,
+      "phase": "cloud",
+      "category": "多云安全审计",
+      "description": "Multi-Cloud Security Auditing Tool.",
+      "agent_hint": "云账号配置审计，生成可读报告。"
+    },
+    {
+      "name": "Kunlun-M",
+      "repo": "LoRexxar/Kunlun-M",
+      "url": "https://github.com/LoRexxar/Kunlun-M",
+      "stars": 2407,
+      "phase": "audit",
+      "category": "静态代码审计",
+      "description": "Static code analysis for PHP, Nodejs/JavaScript, Python, Golang, Java and C/C++.",
+      "agent_hint": "AST 语义扫描，支持接入 Codex/Claude 做 AI 审计。"
+    },
+    {
+      "name": "Cobra",
+      "repo": "FeeiCN/Cobra",
+      "url": "https://github.com/FeeiCN/Cobra",
+      "stars": 3186,
+      "phase": "audit",
+      "category": "源码安全审计",
+      "description": "Source Code Security Audit.",
+      "agent_hint": "多语言源码审计平台，适合审计任务批量化。"
+    },
+    {
+      "name": "SearchMap",
+      "repo": "asaotomo/SearchMap",
+      "url": "https://github.com/asaotomo/SearchMap",
+      "stars": 317,
+      "phase": "recon",
+      "category": "综合信息收集",
+      "description": "集域名解析、IP反查、WHOIS、CDN检测、端口、目录、子域挖掘于一体。",
+      "agent_hint": "快速生成前渗透综合基线，再交给专项工具深挖。"
+    },
+    {
+      "name": "SiteScan",
+      "repo": "kracer127/SiteScan",
+      "url": "https://github.com/kracer127/SiteScan",
+      "stars": null,
+      "phase": "recon",
+      "category": "综合信息收集",
+      "description": "域名历史、子域、旁站、WHOIS、CMS、备案、CDN、WAF、后台与 HTML 报告一体化。",
+      "agent_hint": "适合单目标一站化收集，输出报告便于交接。"
+    },
+    {
+      "name": "Vxscan",
+      "repo": "al0ne/Vxscan",
+      "url": "https://github.com/al0ne/Vxscan",
+      "stars": null,
+      "phase": "recon",
+      "category": "综合扫描",
+      "description": "存活验证、敏感文件、JS泄露、WAF/CDN识别、端口、指纹、POC、绕过CDN、旁站。",
+      "agent_hint": "综合性较高，可作为信息收集与漏洞发现衔接层。"
+    },
+    {
+      "name": "Nemo",
+      "repo": "hanc00l/nemo_go",
+      "url": "https://github.com/hanc00l/nemo_go",
+      "stars": null,
+      "phase": "recon",
+      "category": "自动化信息收集平台",
+      "description": "集成常用信息收集工具，自动化收集内网与互联网资产。",
+      "agent_hint": "适合批量资产沉淀和团队协作。"
+    },
+    {
+      "name": "ShuiZe",
+      "repo": "0x727/ShuiZe_0x727",
+      "url": "https://github.com/0x727/ShuiZe_0x727",
+      "stars": null,
+      "phase": "recon",
+      "category": "综合信息收集",
+      "description": "红队打点综合信息收集工具。",
+      "agent_hint": "与 SearchMap/SiteScan 结果交叉验证。"
+    },
+    {
+      "name": "ksubdomain",
+      "repo": "knownsec/ksubdomain",
+      "url": "https://github.com/knownsec/ksubdomain",
+      "stars": null,
+      "phase": "recon",
+      "category": "子域名爆破",
+      "description": "无状态子域名爆破工具，速度快。",
+      "agent_hint": "主动爆破前先确认授权，小字典验证再放大。"
+    },
+    {
+      "name": "kscan",
+      "repo": "lcvvvv/kscan",
+      "url": "https://github.com/lcvvvv/kscan",
+      "stars": null,
+      "phase": "recon",
+      "category": "端口与资产测绘",
+      "description": "轻量级资产测绘与端口扫描，支持指纹识别。",
+      "agent_hint": "批量 IP/C 段快速测绘，结果喂给 httpx/EHole。"
+    },
+    {
+      "name": "dismap",
+      "repo": "zhzyker/dismap",
+      "url": "https://github.com/zhzyker/dismap",
+      "stars": null,
+      "phase": "recon",
+      "category": "资产发现与指纹",
+      "description": "快速识别 Web 指纹信息，定位资产类型。",
+      "agent_hint": "适合 C 段批量指纹和脆弱点定位。"
+    },
+    {
+      "name": "fofa_viewer",
+      "repo": "wgpsec/fofa_viewer",
+      "url": "https://github.com/wgpsec/fofa_viewer",
+      "stars": null,
+      "phase": "recon",
+      "category": "空间测绘客户端",
+      "description": "FOFA 查询客户端，便于资产测绘与关联反查。",
+      "agent_hint": "用 ip/domain/cert/icp 语法做跨资产关联。"
+    },
+    {
+      "name": "ones",
+      "repo": "ffffffff0x/ones",
+      "url": "https://github.com/ffffffff0x/ones",
+      "stars": null,
+      "phase": "recon",
+      "category": "测绘 API 查询",
+      "description": "多个网络空间测绘引擎 API 的命令行查询工具。",
+      "agent_hint": "统一 FOFA/Hunter/Quake 等查询，结果转 JSON。"
+    },
+    {
+      "name": "superSearchPlus",
+      "repo": "dark-kingA/superSearchPlus",
+      "url": "https://github.com/dark-kingA/superSearchPlus",
+      "stars": null,
+      "phase": "recon",
+      "category": "浏览器聚合插件",
+      "description": "聚合资产测绘、敏感信息、JS、目录、Vue 组件扫描。",
+      "agent_hint": "浏览器内快速信息收集，配合 CLI 工具验证。"
+    },
+    {
+      "name": "ip2domain",
+      "repo": "sma11new/ip2domain",
+      "url": "https://github.com/sma11new/ip2domain",
+      "stars": null,
+      "phase": "recon",
+      "category": "IP 反查域名",
+      "description": "批量 IP 反查域名、备案、归属、权重。",
+      "agent_hint": "旁站/C 段反查首选，输出公司归属。"
+    },
+    {
+      "name": "BingC",
+      "repo": "Xyntax/BingC",
+      "url": "https://github.com/Xyntax/BingC",
+      "stars": 100,
+      "phase": "recon",
+      "category": "旁站/C段查询",
+      "description": "基于 Bing 的 IP 反查域名，支持 IP 与 /24。",
+      "agent_hint": "`python bingC.py 1.2.3.0/24` 做旁站与 C 段收集。"
+    },
+    {
+      "name": "FingerprintHub",
+      "repo": "0x727/FingerprintHub",
+      "url": "https://github.com/0x727/FingerprintHub",
+      "stars": null,
+      "phase": "recon",
+      "category": "指纹库",
+      "description": "ObserverWard 指纹库，支持本地指纹匹配。",
+      "agent_hint": "指纹识别结果与 FingerprintHub 交叉比对。"
+    },
+    {
+      "name": "FLUX-Webscan",
+      "repo": "MY0723/FLUX-Webscan",
+      "url": "https://github.com/MY0723/FLUX-Webscan",
+      "stars": 223,
+      "phase": "recon",
+      "category": "Web 扫描",
+      "description": "JS 敏感信息、API 端点、API 文档、爬取、子域、WAF 检测。",
+      "agent_hint": "可承接 recon-js-analysis 的自动化提取。"
+    },
+    {
+      "name": "AppInfoScanner",
+      "repo": "kelvinBen/AppInfoScanner",
+      "url": "https://github.com/kelvinBen/AppInfoScanner",
+      "stars": 3551,
+      "phase": "mobile",
+      "category": "移动与静态站点信息收集",
+      "description": "Android/iOS/WEB/H5/静态站点资产信息收集。",
+      "agent_hint": "APP 与 H5 目标先跑它提取 Title/Domain/CDN/指纹。"
+    },
+    {
+      "name": "domain_hunter",
+      "repo": "bit4woo/domain_hunter",
+      "url": "https://github.com/bit4woo/domain_hunter",
+      "stars": null,
+      "phase": "recon",
+      "category": "Burp 子域插件",
+      "description": "按流量自动收集组织子域、相似域、关联域。",
+      "agent_hint": "Burp 挂代理跑一段时间即可积累关联资产。"
+    },
+    {
+      "name": "Sylas",
+      "repo": "Acmesec/Sylas",
+      "url": "https://github.com/Acmesec/Sylas",
+      "stars": null,
+      "phase": "recon",
+      "category": "子域名收集",
+      "description": "新一代子域名主/被动收集工具。",
+      "agent_hint": "与 subfinder/OneForAll 结果合并去重。"
+    },
+    {
+      "name": "Frog-checkCDN",
+      "repo": "timwhitez/Frog-checkCDN",
+      "url": "https://github.com/timwhitez/Frog-checkCDN",
+      "stars": null,
+      "phase": "recon",
+      "category": "CDN 识别",
+      "description": "CDN IP/CNAME 规则库，用于批量判断是否使用 CDN。",
+      "agent_hint": "扫描前先判断 CDN，避免对 CDN IP 做旁站和端口扫描。"
+    },
+    {
+      "name": "CloudFlair",
+      "repo": "christophetd/CloudFlair",
+      "url": "https://github.com/christophetd/CloudFlair",
+      "stars": null,
+      "phase": "recon",
+      "category": "CDN 绕过",
+      "description": "使用 Censys 全网扫描数据查找 CloudFlare 背后的源站。",
+      "agent_hint": "CloudFlare 目标优先尝试证书反查源服务器。"
+    },
+    {
+      "name": "identYwaf",
+      "repo": "stamparm/identYwaf",
+      "url": "https://github.com/stamparm/identYwaf",
+      "stars": null,
+      "phase": "recon",
+      "category": "WAF 识别",
+      "description": "通过触发 payload 与指纹库识别 WAF 类型。",
+      "agent_hint": "识别 WAF 后联动 waf-bypass-techniques。"
+    },
+    {
+      "name": "ESD",
+      "repo": "FeeiCN/ESD",
+      "url": "https://github.com/FeeiCN/ESD",
+      "stars": null,
+      "phase": "recon",
+      "category": "子域名收集",
+      "description": "支持泛解析过滤的子域枚举工具。",
+      "agent_hint": "泛解析目标优先用 ESD 或 OneForAll。"
+    },
+    {
+      "name": "URLFinder",
+      "repo": "pingc0y/URLFinder",
+      "url": "https://github.com/pingc0y/URLFinder",
+      "stars": null,
+      "phase": "recon",
+      "category": "JS/URL 提取",
+      "description": "快速提取页面中 JS 与 URL。",
+      "agent_hint": "作为 JSFinder 的更新替代，结果交给 recon-js-analysis。"
+    },
+    {
+      "name": "JSINFO-SCAN",
+      "repo": "p1g3/JSINFO-SCAN",
+      "url": "https://github.com/p1g3/JSINFO-SCAN",
+      "stars": null,
+      "phase": "recon",
+      "category": "JS 信息收集",
+      "description": "递归爬取域名与 JS 中信息。",
+      "agent_hint": "适合从 JS 批量发现子域和隐藏接口。"
+    },
+    {
+      "name": "EyeWitness",
+      "repo": "FortyNorthSecurity/EyeWitness",
+      "url": "https://github.com/FortyNorthSecurity/EyeWitness",
+      "stars": null,
+      "phase": "recon",
+      "category": "资产截图与探测",
+      "description": "URL 截图、RDP/VNC 探测、title、默认凭据，生成 HTML 报告。",
+      "agent_hint": "批量资产筛选和报告生成。"
+    },
+    {
+      "name": "AlliN",
+      "repo": "P1-Team/AlliN",
+      "url": "https://github.com/P1-Team/AlliN",
+      "stars": null,
+      "phase": "recon",
+      "category": "综合打点工具",
+      "description": "支持链接/CIDR/端口/路径的快速打点综合工具。",
+      "agent_hint": "渗透前资产收集与内网横向均可用。"
+    },
+    {
+      "name": "hostscan",
+      "repo": "cckuailong/hostscan",
+      "url": "https://github.com/cckuailong/hostscan",
+      "stars": null,
+      "phase": "recon",
+      "category": "HOST 碰撞",
+      "description": "IP 与 Host 字典碰撞，发现隐形资产。",
+      "agent_hint": "拿到真实 IP 但无法访问时优先尝试。"
+    },
+    {
+      "name": "f5_cookieLeaks",
+      "repo": "ezelf/f5_cookieLeaks",
+      "url": "https://github.com/ezelf/f5_cookieLeaks",
+      "stars": null,
+      "phase": "recon",
+      "category": "CDN/负载均衡绕过",
+      "description": "解码 F5 BIGip Cookie 获取后端真实 IP。",
+      "agent_hint": "响应头出现 BIGipServer 时使用。"
+    },
+    {
+      "name": "scaninfo",
+      "repo": "redtoolskobe/scaninfo",
+      "url": "https://github.com/redtoolskobe/scaninfo",
+      "stars": null,
+      "phase": "scan",
+      "category": "快速漏洞扫描",
+      "description": "快速扫描红队工具，支持常见服务漏洞检测。",
+      "agent_hint": "中间件/端口批量快速打点时优先。"
+    },
+    {
+      "name": "shiro_attack",
+      "repo": "SummerSec/ShiroAttack2",
+      "url": "https://github.com/SummerSec/ShiroAttack2",
+      "stars": null,
+      "phase": "exploit",
+      "category": "Shiro 利用",
+      "description": "Shiro rememberMe AES 密钥爆破与反序列化利用。",
+      "agent_hint": "检测到 rememberMe=deleteMe 时使用。"
+    },
+    {
+      "name": "JNDIExploit",
+      "repo": "feihong-cs/JNDIExploit",
+      "url": "https://github.com/feihong-cs/JNDIExploit",
+      "stars": null,
+      "phase": "exploit",
+      "category": "JNDI 利用",
+      "description": "JNDI 注入利用工具，支持 RMI/LDAP 服务。",
+      "agent_hint": "Log4j/Fastjson/WebLogic JNDI 链验证。"
+    },
+    {
+      "name": "Decrypt_Weblogic_Password",
+      "repo": "TideSec/Decrypt_Weblogic_Password",
+      "url": "https://github.com/TideSec/Decrypt_Weblogic_Password",
+      "stars": null,
+      "phase": "exploit",
+      "category": "WebLogic 密码解密",
+      "description": "解密 WebLogic config.xml 中的 AES/3DES 密码。",
+      "agent_hint": "拿到 config.xml 与 SerializedSystemIni.dat 后使用。"
+    },
+    {
+      "name": "ysoserial",
+      "repo": "frohoff/ysoserial",
+      "url": "https://github.com/frohoff/ysoserial",
+      "stars": null,
+      "phase": "exploit",
+      "category": "反序列化利用",
+      "description": "Java 反序列化 gadget 生成工具。",
+      "agent_hint": "Shiro/WebLogic/JBoss/Spring 反序列化链验证。"
+    }
+  ]
+}

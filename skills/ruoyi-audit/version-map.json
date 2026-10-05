@@ -1,0 +1,23 @@
+{
+  "updated": "2026-09-02",
+  "note": "版本映射仅收录本工作区实测/核验过的特征；公开 CVE 归属须逐条回源核验后再入 vuln-catalog",
+  "mapping": [
+    {
+      "observed": "csifs.cn 登录/注册页引用 /ruoyi/js/ry-ui.js?v=4.8.1, /ruoyi/css/ry-ui.css?v=4.8.1",
+      "upstream": "RuoYi 单体(单体版) ~4.8.1",
+      "source": "results/ruoyi-csifs-64916-2026-09-02/login.txt",
+      "confidence": "high"
+    },
+    {
+      "observed": "GET /captcha/captchaImage?type=math -> image/jpeg (kaptcha, 会话校验), 登录/注册页 var captchaType=\"math\"; captchaEnabled=true",
+      "upstream": "RuoYi 系默认 math 验证码配置",
+      "source": "results/ruoyi-csifs-64916-2026-09-02/",
+      "confidence": "high"
+    },
+    {
+      "observed": "未放行路径 302 -> /login (Spring Security 默认), /register 页面 200 但 POST 返回 500 注册未开启",
+      "upstream": "RuoYi 单体安全配置 + sys.account.registerUser 开关",
+      "confidence": "high"
+    }
+  ]
+}

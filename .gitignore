@@ -1,0 +1,55 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.venv-*/
+venv/
+
+# === 敏感目录：客户项目数据，绝不进 git ===
+state/
+evidence/
+pocs/
+results/
+deliverables/
+_交付/
+_archive/
+recon-*/
+strix_runs/
+chrome-profile/
+chrome-cdp-profile-*/
+*.mitm
+*.har
+*.pcap
+*.pcapng
+
+# 敏感文件
+*.key
+*.pem
+*.p12
+*.pfx
+.env
+.env.*
+config/local.*
+config/*.local.json
+
+# 截图与日志（证据）
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.log
+!docs/images/*.png
+!docs/images/*.jpg
